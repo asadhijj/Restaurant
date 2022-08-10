@@ -13,35 +13,22 @@ function Food ( foodNVlaue, typeValue, moneyValue) {
 allFood.push(this);
 }
 
-
- Food.prototype.render = function () {
-    let table = document.getElementById("table");
-
-    let row = document.createElement("tr");
-    row.setAttribute("class", "data");
-
-    let data = document.createElement("td");
-    data.setAttribute("class", "data");
-    data.textContent = `${this.foodID}`;
-    row.appendChild(data); 
-
-    let dataN = document.createElement("td");
-    dataN.setAttribute("class", "data");
-    dataN.textContent = `${this.foodN}`;
-    row.appendChild(dataN); 
-
-    let dataR = document.createElement("td");
-    dataR.setAttribute("class", "data");
-    dataR.textContent = `${this.type}`;
-    row.appendChild(dataR); 
-
-    let dataP = document.createElement("td");
-    dataP.setAttribute("class", "data");
-    dataP.textContent = `${this.money} JD`;
-    row.appendChild(dataP);
-
-    table.appendChild(row); 
+function saveData(){
+    let stringD= JSON.stringify(allFood);
+    localStorage.setItem("food",stringD)
 }
+
+function getData(){
+    let item =localStorage.getItem("food")
+    let gottenBack = JSON.parse(item)
+
+    if(gottenBack !== null) {
+        for (let i = 0; i < gottenBack.length; i++) {
+            new Food (gottenBack[i].foodN, gottenBack[i].type, gottenBack[i].money);
+}
+    }
+}
+
 
 let form=document.getElementById('form');
 form.addEventListener('submit',handleSubmit);
@@ -51,14 +38,10 @@ function handleSubmit(event) {
     let name =event.target.foodName.value;
     let type =event.target.itemType.value;
     let money =event.target.price.value;
-    let newFood = new Food(name, type, money);
-    newFood.render();
+    new Food(name, type, money);
+    saveData();
 }
-function renderItems() {
-    for (let i = 0; i < allFood.length; i++){
-       allFood[i].render();
-    }
-}
+ getData();
  
 
 
