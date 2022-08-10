@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 2;
+    height: 100vh;
+    background-color: grey;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+
+
+header{
+    position: static;
+    width: 100%;
+    padding: 20px, 100px 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+ .h11 {
+    margin-left: 20px;
+    color: #f2f2f2;
+    
+  }
+  .h12{
+    margin-left: 20px;
+  }
+
+  .navigation {
+    overflow: hidden;
+  }
+
+  .navigation a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navigation a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+ table{
+
+  border-collapse: collapse;
+
+ }
+
+ #table th {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    width: 250px;
+    height: 50px;
+    font-weight: 500;
+
+}
+
+.data td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    height: 25px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px ;
+}
+.fa {
+  padding: 20px;
+  font-size: 17px;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+
+
+
+
+ 
